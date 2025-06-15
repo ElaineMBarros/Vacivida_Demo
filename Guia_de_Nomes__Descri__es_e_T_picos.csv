@@ -1,0 +1,22 @@
+Arquivo,Nome da Tabela,Descrição,Tópico Sugerido
+prod.vcvd_adicional.csv,Informações Adicionais,Informações complementares sobre o paciente ou evento clínico.,Consulta: Informações Adicionais
+prod.vcvd_bioquimica.csv,Exames Bioquímicos,Resultados laboratoriais de exames bioquímicos.,Consulta: Exames Bioquímicos
+prod.vcvd_city.csv,Cidades,Lista de cidades registradas no sistema.,Consulta: Cidades
+prod.vcvd_country.csv,Países,Informações sobre países de origem.,Consulta: Países
+prod.vcvd_deteccao_viral_corrigido.csv,Detecção Viral,Resultados de testes relacionados à presença de vírus.,Consulta: Detecção Viral
+prod.vcvd_diagnostico.csv,Diagnósticos,Diagnósticos médicos associados aos pacientes.,Consulta: Diagnósticos
+prod.vcvd_dose.csv,Doses de Vacinas,Histórico de administração de vacinas e doses aplicadas.,Consulta: Doses de Vacinas
+prod.vcvd_encerramento_final.csv,Encerramento de Casos,Dados relacionados ao encerramento clínico de um caso.,Consulta: Encerramento de Casos
+prod.vcvd_evento_adverso.csv,Eventos Adversos,Reações adversas ou efeitos colaterais pós-vacinação.,Consulta: Eventos Adversos
+prod.vcvd_hemograma.csv,Hemograma,Resultados laboratoriais de hemogramas.,Consulta: Hemograma
+prod.vcvd_imunologia.csv,Imunologia,Exames e informações imunológicas dos pacientes.,Consulta: Imunologia
+prod.vcvd_manifestacao_clinica_sistemica_cardiova.csv,Manifestações Sistêmicas Cardiovasculares,Sinais e sintomas clínicos cardiovasculares.,Consulta: Manifestações Sistêmicas Cardiovasculares
+prod.vcvd_manifestacao_clinica_sistemica_gastrint.csv,Manifestações Sistêmicas Gastrintestinais,Sintomas clínicos relacionados ao sistema digestivo.,Consulta: Manifestações Sistêmicas Gastrintestinais
+prod.vcvd_manifestacao_clinica_sistemica_neuro.csv,Manifestações Sistêmicas Neurológicas,Sinais clínicos neurológicos.,Consulta: Manifestações Sistêmicas Neurológicas
+prod.vcvd_manifestacao_clinica_sistemica_pele.csv,Manifestações Sistêmicas Dermatológicas,Manifestações clínicas na pele.,Consulta: Manifestações Sistêmicas Dermatológicas
+prod.vcvd_manifestacao_clinica_sistemica_respirat.csv,Manifestações Sistêmicas Respiratórias,Sinais clínicos do sistema respiratório.,Consulta: Manifestações Sistêmicas Respiratórias
+prod.vcvd_manifestacao_local.csv,Manifestações Locais,Reações locais observadas no paciente.,Consulta: Manifestações Locais
+prod.vcvd_medicacao_em_uso.csv,Medicação em Uso,Medicamentos em uso pelos pacientes.,Consulta: Medicação em Uso
+prod.vcvd_outra_manifestacao.csv,Outras Manifestações,Outras manifestações clínicas não categorizadas.,Consulta: Outras Manifestações
+prod.vcvd_outro_viscerotomia_necropsia_anatomopat.csv,Dados de Autópsia,Informações obtidas por necropsia e análise anatomopatológica.,Consulta: Dados de Autópsia
+prod.vcvd_puncao_lombar.csv,Punção Lombar,Exames e dados obtidos por punção lombar.,Consulta: Punção Lombar

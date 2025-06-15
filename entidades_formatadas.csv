@@ -1,0 +1,13 @@
+Nome da Entidade,Tipo,Exemplos
+PacienteId,Texto,"123456789, ID-00987"
+CPF,Texto,123.456.789-00
+TipoExame,Lista,"bioquímica, hemograma, imunologia"
+DataExame,Data,2024-05-10
+DataDose,Data,2024-03-01
+NomeVacina,Texto,"Pfizer, AstraZeneca"
+TipoManifestacao,Lista,"Sistêmica, Local, Adversa"
+DescricaoManifestacao,Texto,"cefaleia, febre"
+DataEvento,Data,2024-06-11
+NomeMedicamento,Texto,"paracetamol, ibuprofeno"
+StatusCaso,Lista,"Curado, Óbito, Ativo"
+DataEncerramento,Data,2024-07-15

@@ -1,0 +1,5 @@
+Pfizer, BNT162b2
+AstraZeneca, ChAdOx1
+Coronavac, Sinovac
+Janssen, Ad26.COV2.S
+Moderna, mRNA-1273
