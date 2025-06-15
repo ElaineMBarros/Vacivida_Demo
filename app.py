@@ -1,46 +1,45 @@
 
 import streamlit as st
 import pandas as pd
+from io import BytesIO
 
 @st.cache_data
-def load_dose_data():
-    return pd.read_csv("prod.vcvd_dose.csv", sep=";", encoding="ISO-8859-1")
+def load_data():
+    df = pd.read_csv("prod.vcvd_dose.csv", encoding="latin1", sep=";")
+    return df
 
-df_dose = load_dose_data()
+def gerar_excel(df):
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
+        df.to_excel(writer, index=False, sheet_name="Vacinação")
+    output.seek(0)
+    return output
 
-st.set_page_config(layout="wide")
-st.title("Vacivida - Análise de Vacinação")
+def main():
+    st.set_page_config(page_title="Vacivida - Análise de Vacinação", layout="wide")
+    st.title("📊 Vacivida - Análise de Vacinação e Desfecho")
 
-tabs = st.tabs(["📋 Dados de Vacinação"])
+    df = load_data()
 
-with tabs[0]:
-    st.subheader("📊 Filtros")
-    col1, col2 = st.columns(2)
-    with col1:
-        vacinas = df_dose["vcvd_nome_vacina"].dropna().unique() if "vcvd_nome_vacina" in df_dose else []
-        vacina = st.selectbox("Filtrar por Nome da Vacina", options=vacinas)
-    with col2:
-        datas = pd.to_datetime(df_dose["createdon"], errors='coerce') if "createdon" in df_dose else []
-        data_inicial = st.date_input("Data inicial", value=datas.min().date() if not datas.empty else None)
-        data_final = st.date_input("Data final", value=datas.max().date() if not datas.empty else None)
+    st.sidebar.header("Filtros")
 
-    # Aplicar filtro
-    df_filtrado = df_dose.copy()
-    if vacina:
-        df_filtrado = df_filtrado[df_filtrado["vcvd_nome_vacina"] == vacina]
-    if not datas.empty:
-        df_filtrado["createdon"] = pd.to_datetime(df_filtrado["createdon"], errors='coerce')
-        df_filtrado = df_filtrado[
-            (df_filtrado["createdon"].dt.date >= data_inicial) &
-            (df_filtrado["createdon"].dt.date <= data_final)
-        ]
+    vacinas = df["NomeVacina"].dropna().unique().tolist()
+    vacina = st.sidebar.selectbox("Nome da Vacina", options=["Todas"] + vacinas)
 
-    st.dataframe(df_filtrado)
+    status = df["StatusCaso"].dropna().unique().tolist()
+    status_filtro = st.sidebar.multiselect("Status do Paciente", options=status, default=status)
 
-    # Exportação
-    st.download_button(
-        label="📥 Exportar para Excel",
-        data=df_filtrado.to_excel(index=False, engine="openpyxl"),
-        file_name="dados_filtrados.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
+    if vacina != "Todas":
+        df = df[df["NomeVacina"] == vacina]
+
+    if status_filtro:
+        df = df[df["StatusCaso"].isin(status_filtro)]
+
+    st.markdown(f"### Resultados: {len(df)} registros encontrados")
+    st.dataframe(df)
+
+    excel_data = gerar_excel(df)
+    st.download_button(label="📥 Baixar Excel", data=excel_data, file_name="dados_vacinados.xlsx", mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+
+if __name__ == "__main__":
+    main()
