@@ -1,24 +1,36 @@
+# Vacivida Dashboard
 
-# Vacivida - Dashboard de Vacinação
+Dashboard de análise de dados de vacinação desenvolvido com Streamlit.
 
-Este projeto é um painel em Streamlit que analisa dados de vacinação da COVID-19 e status de pacientes com base nos registros da base pública `prod.vcvd_dose.csv`.
+## 🚀 Funcionalidades
 
-## Funcionalidades
+- Análise temporal de vacinações
+- Análise demográfica
+- Distribuição por status e tipo de vacina
+- Estatísticas detalhadas
+- Exportação de dados em Excel e PDF
+- Filtros avançados
 
-- Filtros por Nome da Vacina e Status do Paciente
-- Tabela interativa dos registros
-- Exportação dos resultados em Excel
+## 📋 Pré-requisitos
 
-## Como executar
+- Python 3.8+
+- pip
 
+## 🔧 Instalação
+
+1. Clone o repositório
+2. Instale as dependências:
 ```bash
 pip install -r requirements.txt
+```
+
+## 🎮 Como usar
+
+1. Execute o dashboard:
+```bash
 streamlit run app.py
 ```
 
-## Requisitos
+2. Acesse o dashboard no navegador (geralmente em http://localhost:8501)
 
-- Python 3.8+
-- Streamlit
-- pandas
-- openpyxl
+## 📊 Estrutura do Projeto
